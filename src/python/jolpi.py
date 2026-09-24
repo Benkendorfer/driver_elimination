@@ -36,7 +36,7 @@ def _throttled_get(url: str, params: dict) -> requests.Response:
         _last_request["time"] = time.monotonic()
 
         logger.info("GET %s attempt %i", url, attempt)
-        resp = requests.get(url, params=params, timeout=10)
+        resp = requests.get(url, params=params, timeout=10)  # noqa: TID251
         attempt += 1
         throttled = resp.status_code == requests.codes.too_many_requests
         if not throttled or attempt == _MAX_ATTEMPTS:
@@ -69,7 +69,9 @@ def _get(path: str, *, refresh: bool = False) -> dict:
     return data
 
 
-def get_results(year: int, race: int, *, refresh: bool = False) -> dict | None:
+def get_race_results(
+    year: int, race: int, *, refresh: bool = False
+) -> dict | None:
     """Grand Prix results for round `race` of `year`, or None if not run yet.
 
     Returns the race dict from the API: `raceName`, `date`, `Circuit`, and
@@ -82,6 +84,20 @@ def get_results(year: int, race: int, *, refresh: bool = False) -> dict | None:
     return races[0] if races else None
 
 
+def get_sprint_results(
+    year: int, race: int, *, refresh: bool = False
+) -> dict | None:
+    """Sprint results for round `race` of `year`, or None if there are none.
+
+    None means the round has no sprint, or the sprint hasn't been run yet.
+    Otherwise returns the race dict from the API, like `get_race_results`, but
+    with the results under `SprintResults` instead of `Results`.
+    """
+    data = _get(f"{year}/{race}/sprint", refresh=refresh)
+    sprints = data["RaceTable"]["Races"]
+    return sprints[0] if sprints else None
+
+
 def get_year_races(year: int, *, refresh: bool = False) -> list[dict]:
     """The calendar for `year`: one dict per round, in round order.
 
@@ -91,16 +107,18 @@ def get_year_races(year: int, *, refresh: bool = False) -> list[dict]:
     return _get(f"{year}/races", refresh=refresh)["RaceTable"]["Races"]
 
 
-def _race_start(race: dict) -> datetime.datetime:
-    """Start of the Grand Prix in UTC, from a calendar entry.
+def _session_start(session: dict) -> datetime.datetime:
+    """Start time in UTC of a session with `date` and optional `time` fields.
 
-    Falls back to midnight UTC on the race date if the API gives no time.
+    Works for a calendar entry (the Grand Prix itself) and for its `Sprint`,
+    `Qualifying`, ... entries. Falls back to midnight UTC on that date if the
+    API gives no time.
     """
-    time_str = race.get("time", "00:00:00Z").replace("Z", "+00:00")
-    return datetime.datetime.fromisoformat(f"{race['date']}T{time_str}")
+    time_str = session.get("time", "00:00:00Z").replace("Z", "+00:00")
+    return datetime.datetime.fromisoformat(f"{session['date']}T{time_str}")
 
 
-def get_year_results(
+def get_year_race_results(
     year: int,
     from_race: int = 1,
     *,
@@ -113,13 +131,14 @@ def get_year_results(
         year: Season to fetch.
         from_race: First round to include.
         refresh: Re-download the calendar. Results for individual rounds stay
-            cached; use `get_results(..., refresh=True)` to re-download one.
+            cached; use `get_race_results(..., refresh=True)` to re-download
+            one.
         include_future: Also include rounds that haven't started yet, with
             value None. Otherwise they are left out.
 
     Returns:
         A dict mapping round number to that round's race dict (as returned by
-        `get_results`), e.g. {1: {...}, 2: {...}}. The value is None for a
+        `get_race_results`), e.g. {1: {...}, 2: {...}}. The value is None for a
         round that has started but whose results aren't published yet, and
         for future rounds if `include_future` is set.
     """
@@ -130,11 +149,55 @@ def get_year_results(
         rnd = int(race["round"])
         if rnd < from_race:
             continue
-        if _race_start(race) > now:
+        if _session_start(race) > now:
             if not include_future:
                 break  # the calendar is in date order, so the rest are future
             results[rnd] = None
             continue
-        results[rnd] = get_results(year, rnd)
+        results[rnd] = get_race_results(year, rnd)
+
+    return results
+
+
+def get_year_sprint_results(
+    year: int,
+    from_race: int = 1,
+    *,
+    refresh: bool = False,
+    include_future: bool = False,
+) -> dict[int, dict | None]:
+    """Sprint results for `year`, from round `from_race` onwards.
+
+    Only rounds with a sprint are included; the calendar says which ones, so
+    rounds without a sprint are never requested.
+
+    Args:
+        year: Season to fetch.
+        from_race: First round to include.
+        refresh: Re-download the calendar. Results for individual sprints stay
+            cached; use `get_sprint_results(..., refresh=True)` to re-download
+            one.
+        include_future: Also include sprints that haven't started yet, with
+            value None. Otherwise they are left out.
+
+    Returns:
+        A dict mapping round number to that round's sprint dict (as returned
+        by `get_sprint_results`), e.g. {2: {...}, 4: {...}}. The value is None
+        for a sprint that has started but whose results aren't published yet,
+        and for future sprints if `include_future` is set.
+    """
+    now = datetime.datetime.now(datetime.UTC)
+
+    results: dict[int, dict | None] = {}
+    for race in get_year_races(year, refresh=refresh):
+        rnd = int(race["round"])
+        if rnd < from_race or "Sprint" not in race:
+            continue
+        if _session_start(race["Sprint"]) > now:
+            if not include_future:
+                break  # the calendar is in date order, so the rest are future
+            results[rnd] = None
+            continue
+        results[rnd] = get_sprint_results(year, rnd)
 
     return results

@@ -40,6 +40,7 @@ select = [
     "FBT",     # boolean positional arguments (make them keyword-only with `*`)
     "RUF",     # ruff's own checks
     "PT",      # pytest style
+    "TID251",  # banned APIs (see below)
 ]
 ignore = [
     "PLR2004",  # magic-value comparisons; too noisy for points tables
@@ -52,3 +53,10 @@ convention = "google"
 force-single-line = true
 force-sort-within-sections = true
 single-line-exclusions = ["typing", "collections.abc"]
+
+# All API traffic must go through jolpi._get, so it is cached and throttled
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+"requests.get".msg = "Use jolpi._get, which caches and throttles requests"
+"requests.request".msg = "Use jolpi._get, which caches and throttles requests"
+"requests.Session".msg = "Use jolpi._get, which caches and throttles requests"
+"urllib.request.urlopen".msg = "Use jolpi._get, which caches and throttles requests"
