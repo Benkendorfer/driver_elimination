@@ -1,0 +1,41 @@
+[project]
+name = "driver-elimination"
+version = "0.1.0"
+description = "Tracks when each F1 driver is mathematically eliminated from the championship"
+requires-python = ">=3.14"
+dependencies = [
+    "pulp>=3.3.2",
+    "requests>=2.34.2",
+]
+
+[tool.pyright]
+venvPath = "."
+venv = ".venv"
+pythonVersion = "3.14"
+
+# Google Python Style Guide (https://google.github.io/styleguide/pyguide.html), as far as ruff can check it
+[tool.ruff]
+line-length = 80
+
+[tool.ruff.lint]
+select = [
+    "E", "W",  # pycodestyle
+    "F",       # pyflakes
+    "I",       # import sorting
+    "N",       # pep8 naming
+    "D",       # docstrings
+    "B",       # likely bugs
+    "UP",      # modern syntax for the target Python
+    "PL",      # pylint (Google's own linter)
+]
+ignore = [
+    "PLR2004",  # magic-value comparisons; too noisy for points tables
+]
+
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+force-single-line = true
+force-sort-within-sections = true
+single-line-exclusions = ["typing", "collections.abc"]
