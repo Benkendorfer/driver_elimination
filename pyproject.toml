@@ -27,6 +27,19 @@ select = [
     "B",       # likely bugs
     "UP",      # modern syntax for the target Python
     "PL",      # pylint (Google's own linter)
+    "ANN",     # missing type hints
+    "A",       # shadowing built-ins like `round`, `id`, `type`
+    "DTZ",     # datetimes without a time zone
+    "G", "LOG",  # logging calls (Google style: %-args, not f-strings)
+    "SIM",     # simplifiable code
+    "RET",     # inconsistent or unnecessary returns
+    "C4",      # list/dict/set comprehensions
+    "PTH",     # pathlib instead of os.path
+    "PERF",    # slow patterns in loops
+    "ARG",     # unused arguments
+    "FBT",     # boolean positional arguments (make them keyword-only with `*`)
+    "RUF",     # ruff's own checks
+    "PT",      # pytest style
 ]
 ignore = [
     "PLR2004",  # magic-value comparisons; too noisy for points tables
