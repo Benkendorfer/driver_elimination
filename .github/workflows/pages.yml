@@ -1,11 +1,17 @@
 # Publishes the site/ folder to GitHub Pages on every push to main that
-# changes it. Requires Settings → Pages → Source: "GitHub Actions".
+# changes it, and after each "Update data" run. Requires Settings → Pages →
+# Source: "GitHub Actions".
 name: Deploy site
 
 on:
   push:
     branches: [main]
     paths: ["site/**", ".github/workflows/pages.yml"]
+  # Commits pushed by a workflow don't trigger other workflows, so the data
+  # update can't start this one with its push; this does it instead.
+  workflow_run:
+    workflows: ["Update data"]
+    types: [completed]
   workflow_dispatch:
 
 permissions:
@@ -19,6 +25,9 @@ concurrency:
 
 jobs:
   deploy:
+    if: >-
+      github.event_name != 'workflow_run' ||
+      github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     environment:
       name: github-pages

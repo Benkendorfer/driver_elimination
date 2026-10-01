@@ -1,0 +1,56 @@
+# Regenerates site/data/<year>.json from the Jolpica-F1 API every Sunday and
+# commits it if the standings changed. The "Deploy site" workflow then
+# publishes it (see the workflow_run trigger there).
+name: Update data
+
+on:
+  schedule:
+    # Sundays 23:00 UTC, after even the latest race of a weekend has finished.
+    - cron: "0 23 * * 0"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  # The season shown on the site; keep in sync with SEASON in site/index.html.
+  YEAR: 2026
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: astral-sh/setup-uv@v10
+        with:
+          enable-cache: true
+
+      - name: Install dependencies
+        run: uv sync --locked
+
+      - name: Run tests
+        run: uv run pytest -q
+
+      # The runner starts with an empty API cache, so every run fetches fresh
+      # results, including any changed by post-race penalties.
+      - name: Export standings
+        run: uv run python src/python/export.py "$YEAR"
+
+      - name: Commit if the standings changed
+        run: |
+          # Ignore the "updated" timestamp, which changes on every run, so a
+          # weekend without a race doesn't create a commit.
+          git add site/data
+          if git diff --cached --quiet -I '"updated":' -- site/data; then
+            echo "No changes to the standings"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Update standings data"
+          git push
