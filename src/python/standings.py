@@ -16,26 +16,15 @@ import dataclasses
 import itertools
 import logging
 import sys
-from typing import Literal
 
 import jolpi
+import season
 
 logger = logging.getLogger(__name__)
-
-SessionKind = Literal["sprint", "race"]
 
 # Finishing positions considered for the countback tie-break. Larger than any
 # grid, so a tie is only left unresolved if two drivers' results are identical.
 _MAX_POSITION = 30
-
-
-@dataclasses.dataclass(frozen=True)
-class Session:
-    """A points-scoring session: a round's sprint or its Grand Prix."""
-
-    rnd: int
-    kind: SessionKind
-    name: str  # e.g. "Chinese Grand Prix"
 
 
 @dataclasses.dataclass
@@ -50,7 +39,7 @@ class Standings:
             count towards countback.
     """
 
-    session: Session
+    session: season.Session
     points: dict[str, float]
     gp_finishes: dict[str, collections.Counter[int]]
 
@@ -106,7 +95,7 @@ def standings_by_session(year: int) -> list[Standings]:
     gp_finishes: dict[str, collections.Counter[int]] = {}
     standings = []
 
-    def snapshot(session: Session) -> Standings:
+    def snapshot(session: season.Session) -> Standings:
         return Standings(
             session=session,
             points=dict(points),
@@ -121,13 +110,15 @@ def standings_by_session(year: int) -> list[Standings]:
         if sprint is not None:
             _add_results(sprint["SprintResults"], points, gp_finishes=None)
             standings.append(
-                snapshot(Session(rnd, "sprint", sprint["raceName"]))
+                snapshot(season.Session(rnd, "sprint", sprint["raceName"]))
             )
 
         race = races.get(rnd)
         if race is not None:
             _add_results(race["Results"], points, gp_finishes)
-            standings.append(snapshot(Session(rnd, "race", race["raceName"])))
+            standings.append(
+                snapshot(season.Session(rnd, "race", race["raceName"]))
+            )
 
     return standings
 
