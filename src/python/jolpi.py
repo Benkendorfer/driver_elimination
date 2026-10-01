@@ -48,7 +48,7 @@ def _throttled_get(url: str, params: dict) -> requests.Response:
 def _get(path: str, *, refresh: bool = False) -> dict:
     """GET `{BASE_URL}/{path}/` and return MRData, caching responses on disk.
 
-    Responses with no races (e.g. a round that hasn't happened yet) are not
+    Empty responses (e.g. for a round that hasn't happened yet) are not
     cached, so they are re-fetched next time.
     """
     cache_file = CACHE_DIR / f"{path}.json"
@@ -59,7 +59,7 @@ def _get(path: str, *, refresh: bool = False) -> dict:
     resp = _throttled_get(f"{BASE_URL}/{path}/", params={"limit": 100})
     data = resp.json()["MRData"]
 
-    if data["RaceTable"]["Races"]:
+    if int(data["total"]) > 0:
         cache_file.parent.mkdir(parents=True, exist_ok=True)
         # Write to a temp file and rename, so an interrupted write can't leave a
         # half-written cache file behind.
@@ -96,6 +96,20 @@ def get_sprint_results(
     data = _get(f"{year}/{race}/sprint", refresh=refresh)
     sprints = data["RaceTable"]["Races"]
     return sprints[0] if sprints else None
+
+
+def get_driver_standings(
+    year: int, race: int, *, refresh: bool = False
+) -> list[dict] | None:
+    """Official drivers' standings after round `race`, or None if not run yet.
+
+    Includes that round's sprint, if any. Returns one dict per driver, in
+    championship order, with `position`, `points`, `wins`, `Driver`, and
+    `Constructors`.
+    """
+    data = _get(f"{year}/{race}/driverStandings", refresh=refresh)
+    lists = data["StandingsTable"]["StandingsLists"]
+    return lists[0]["DriverStandings"] if lists else None
 
 
 def get_year_races(year: int, *, refresh: bool = False) -> list[dict]:
