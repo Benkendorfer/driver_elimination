@@ -1,3 +1,4 @@
+/* After changing this file, bump ?v= in the <link> tag of every page in site/ so browsers fetch the new version. */
 :root {
   color-scheme: light dark;
   --bg: #f7f7f5;
@@ -97,6 +98,34 @@ th { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spa
 td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; }
 .alive { color: var(--alive); font-weight: 600; }
 tr.out td { color: var(--muted); }
+td .driver, td .sub { display: block; }
+.sub { font-size: 0.8rem; color: var(--muted); }
+td.status { white-space: normal; }
+td.status > span { display: block; }
+
+/* Full names and race names on wide screens, short ones on narrow screens. */
+.narrow-only { display: none; }
+@media (max-width: 600px) {
+  .wide-only { display: none; }
+  .narrow-only { display: inline; }
+  th, td { padding: 0.5rem 0.4rem; }
+}
+
+.legend {
+  margin: 1.5rem 0 0;
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.4rem 1rem;
+}
+.legend dt { font-weight: 600; color: var(--fg); }
+.legend dt.alive { color: var(--alive); }
+.legend dd { margin: 0; }
+@media (max-width: 600px) {
+  .legend { grid-template-columns: 1fr; gap: 0.15rem; }
+  .legend dd { margin-bottom: 0.6rem; }
+}
 .error { color: var(--accent); }
 
 footer {

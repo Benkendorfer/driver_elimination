@@ -1,10 +1,11 @@
 {
   "season": 2026,
-  "updated": "2026-10-01T03:28:56+00:00",
+  "updated": "2026-10-01T03:51:48+00:00",
   "last_session": {
     "round": 15,
     "kind": "race",
-    "name": "Azerbaijan Grand Prix"
+    "name": "Azerbaijan Grand Prix",
+    "place": "Baku"
   },
   "remaining": {
     "races": 8,
@@ -20,6 +21,8 @@
       "id": "antonelli",
       "code": "ANT",
       "name": "Andrea Kimi Antonelli",
+      "given_name": "Andrea Kimi",
+      "family_name": "Antonelli",
       "team": "Mercedes",
       "position": 1,
       "points": 302.0,
@@ -33,6 +36,8 @@
       "id": "russell",
       "code": "RUS",
       "name": "George Russell",
+      "given_name": "George",
+      "family_name": "Russell",
       "team": "Mercedes",
       "position": 2,
       "points": 236.0,
@@ -46,6 +51,8 @@
       "id": "hamilton",
       "code": "HAM",
       "name": "Lewis Hamilton",
+      "given_name": "Lewis",
+      "family_name": "Hamilton",
       "team": "Ferrari",
       "position": 3,
       "points": 199.0,
@@ -59,6 +66,8 @@
       "id": "norris",
       "code": "NOR",
       "name": "Lando Norris",
+      "given_name": "Lando",
+      "family_name": "Norris",
       "team": "McLaren",
       "position": 4,
       "points": 186.0,
@@ -72,6 +81,8 @@
       "id": "leclerc",
       "code": "LEC",
       "name": "Charles Leclerc",
+      "given_name": "Charles",
+      "family_name": "Leclerc",
       "team": "Ferrari",
       "position": 5,
       "points": 179.0,
@@ -85,6 +96,8 @@
       "id": "max_verstappen",
       "code": "VER",
       "name": "Max Verstappen",
+      "given_name": "Max",
+      "family_name": "Verstappen",
       "team": "Red Bull",
       "position": 6,
       "points": 163.0,
@@ -98,6 +111,8 @@
       "id": "piastri",
       "code": "PIA",
       "name": "Oscar Piastri",
+      "given_name": "Oscar",
+      "family_name": "Piastri",
       "team": "McLaren",
       "position": 7,
       "points": 120.0,
@@ -111,6 +126,8 @@
       "id": "hadjar",
       "code": "HAD",
       "name": "Isack Hadjar",
+      "given_name": "Isack",
+      "family_name": "Hadjar",
       "team": "Red Bull",
       "position": 8,
       "points": 86.0,
@@ -119,12 +136,14 @@
         "strict": {
           "round": 15,
           "kind": "race",
-          "name": "Azerbaijan Grand Prix"
+          "name": "Azerbaijan Grand Prix",
+          "place": "Baku"
         },
         "full_points": {
           "round": 15,
           "kind": "race",
-          "name": "Azerbaijan Grand Prix"
+          "name": "Azerbaijan Grand Prix",
+          "place": "Baku"
         }
       }
     },
@@ -132,7 +151,9 @@
       "id": "lawson",
       "code": "LAW",
       "name": "Liam Lawson",
-      "team": "RB F1 Team",
+      "given_name": "Liam",
+      "family_name": "Lawson",
+      "team": "RB",
       "position": 9,
       "points": 59.0,
       "wins": 0,
@@ -140,12 +161,14 @@
         "strict": {
           "round": 15,
           "kind": "race",
-          "name": "Azerbaijan Grand Prix"
+          "name": "Azerbaijan Grand Prix",
+          "place": "Baku"
         },
         "full_points": {
           "round": 15,
           "kind": "race",
-          "name": "Azerbaijan Grand Prix"
+          "name": "Azerbaijan Grand Prix",
+          "place": "Baku"
         }
       }
     },
@@ -153,7 +176,9 @@
       "id": "gasly",
       "code": "GAS",
       "name": "Pierre Gasly",
-      "team": "Alpine F1 Team",
+      "given_name": "Pierre",
+      "family_name": "Gasly",
+      "team": "Alpine",
       "position": 10,
       "points": 41.0,
       "wins": 0,
@@ -161,12 +186,14 @@
         "strict": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         },
         "full_points": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         }
       }
     },
@@ -174,7 +201,9 @@
       "id": "arvid_lindblad",
       "code": "LIN",
       "name": "Arvid Lindblad",
-      "team": "RB F1 Team",
+      "given_name": "Arvid",
+      "family_name": "Lindblad",
+      "team": "RB",
       "position": 11,
       "points": 37.0,
       "wins": 0,
@@ -182,12 +211,14 @@
         "strict": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         },
         "full_points": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         }
       }
     },
@@ -195,7 +226,9 @@
       "id": "colapinto",
       "code": "COL",
       "name": "Franco Colapinto",
-      "team": "Alpine F1 Team",
+      "given_name": "Franco",
+      "family_name": "Colapinto",
+      "team": "Alpine",
       "position": 12,
       "points": 27.0,
       "wins": 0,
@@ -203,12 +236,14 @@
         "strict": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         },
         "full_points": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         }
       }
     },
@@ -216,7 +251,9 @@
       "id": "bearman",
       "code": "BEA",
       "name": "Oliver Bearman",
-      "team": "Haas F1 Team",
+      "given_name": "Oliver",
+      "family_name": "Bearman",
+      "team": "Haas",
       "position": 13,
       "points": 20.0,
       "wins": 0,
@@ -224,12 +261,14 @@
         "strict": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         },
         "full_points": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         }
       }
     },
@@ -237,6 +276,8 @@
       "id": "bortoleto",
       "code": "BOR",
       "name": "Gabriel Bortoleto",
+      "given_name": "Gabriel",
+      "family_name": "Bortoleto",
       "team": "Audi",
       "position": 14,
       "points": 10.0,
@@ -245,12 +286,14 @@
         "strict": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         },
         "full_points": {
           "round": 14,
           "kind": "race",
-          "name": "Spanish Grand Prix"
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         }
       }
     },
@@ -258,6 +301,8 @@
       "id": "hulkenberg",
       "code": "HUL",
       "name": "Nico H\u00fclkenberg",
+      "given_name": "Nico",
+      "family_name": "H\u00fclkenberg",
       "team": "Audi",
       "position": 15,
       "points": 7.0,
@@ -266,12 +311,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -279,7 +326,9 @@
       "id": "ocon",
       "code": "OCO",
       "name": "Esteban Ocon",
-      "team": "Haas F1 Team",
+      "given_name": "Esteban",
+      "family_name": "Ocon",
+      "team": "Haas",
       "position": 16,
       "points": 7.0,
       "wins": 0,
@@ -287,12 +336,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -300,6 +351,8 @@
       "id": "sainz",
       "code": "SAI",
       "name": "Carlos Sainz",
+      "given_name": "Carlos",
+      "family_name": "Sainz",
       "team": "Williams",
       "position": 17,
       "points": 7.0,
@@ -308,12 +361,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -321,6 +376,8 @@
       "id": "albon",
       "code": "ALB",
       "name": "Alexander Albon",
+      "given_name": "Alexander",
+      "family_name": "Albon",
       "team": "Williams",
       "position": 18,
       "points": 5.0,
@@ -329,12 +386,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -342,6 +401,8 @@
       "id": "alonso",
       "code": "ALO",
       "name": "Fernando Alonso",
+      "given_name": "Fernando",
+      "family_name": "Alonso",
       "team": "Aston Martin",
       "position": 19,
       "points": 3.0,
@@ -350,12 +411,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -363,7 +426,9 @@
       "id": "tsunoda",
       "code": "TSU",
       "name": "Yuki Tsunoda",
-      "team": "RB F1 Team",
+      "given_name": "Yuki",
+      "family_name": "Tsunoda",
+      "team": "RB",
       "position": 20,
       "points": 1.0,
       "wins": 0,
@@ -371,12 +436,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -384,6 +451,8 @@
       "id": "stroll",
       "code": "STR",
       "name": "Lance Stroll",
+      "given_name": "Lance",
+      "family_name": "Stroll",
       "team": "Aston Martin",
       "position": 21,
       "points": 0.0,
@@ -392,12 +461,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -405,7 +476,9 @@
       "id": "bottas",
       "code": "BOT",
       "name": "Valtteri Bottas",
-      "team": "Cadillac F1 Team",
+      "given_name": "Valtteri",
+      "family_name": "Bottas",
+      "team": "Cadillac",
       "position": 22,
       "points": 0.0,
       "wins": 0,
@@ -413,12 +486,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -426,7 +501,9 @@
       "id": "perez",
       "code": "PER",
       "name": "Sergio P\u00e9rez",
-      "team": "Cadillac F1 Team",
+      "given_name": "Sergio",
+      "family_name": "P\u00e9rez",
+      "team": "Cadillac",
       "position": 23,
       "points": 0.0,
       "wins": 0,
@@ -434,12 +511,14 @@
         "strict": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
           "round": 13,
           "kind": "race",
-          "name": "Italian Grand Prix"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     }

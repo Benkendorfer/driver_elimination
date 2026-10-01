@@ -18,10 +18,18 @@ import standings
 DATA_DIR = Path(__file__).resolve().parents[2] / "site" / "data"
 
 
-def _session_json(session: season.Session | None) -> dict | None:
+def _session_json(
+    session: season.Session | None, places: dict[int, str]
+) -> dict | None:
+    """A session as JSON; `place` is the venue's city, for short labels."""
     if session is None:
         return None
-    return {"round": session.rnd, "kind": session.kind, "name": session.name}
+    return {
+        "round": session.rnd,
+        "kind": session.kind,
+        "name": session.name,
+        "place": places.get(session.rnd, ""),
+    }
 
 
 def _drivers(year: int) -> dict[str, dict]:
@@ -42,7 +50,10 @@ def _drivers(year: int) -> dict[str, dict]:
             drivers[driver["driverId"]] = {
                 "code": driver.get("code", ""),
                 "name": f"{driver['givenName']} {driver['familyName']}",
-                "team": result["Constructor"]["name"],
+                "given_name": driver["givenName"],
+                "family_name": driver["familyName"],
+                # The API calls some teams "Haas F1 Team" etc. but not others.
+                "team": result["Constructor"]["name"].removesuffix(" F1 Team"),
             }
     return drivers
 
@@ -59,6 +70,10 @@ def build(year: int) -> dict:
         remaining = season.remaining_after(all_sessions, latest.session)
     results = elimination.eliminations(year)
     details = _drivers(year)
+    places = {
+        int(race["round"]): race["Circuit"]["Location"]["locality"]
+        for race in jolpi.get_year_races(year)
+    }
 
     drivers = []
     if latest is not None:
@@ -72,7 +87,7 @@ def build(year: int) -> dict:
                     "points": latest.points[driver],
                     "wins": latest.gp_finishes[driver][1],
                     "eliminated": {
-                        method: _session_json(getattr(elim, method))
+                        method: _session_json(getattr(elim, method), places)
                         for method in elimination.METHODS
                     },
                 }
@@ -83,7 +98,7 @@ def build(year: int) -> dict:
         decided = elimination.clinch(results, method)
         clinches[method] = decided and {
             "driver": decided[0],
-            "session": _session_json(decided[1]),
+            "session": _session_json(decided[1], places),
         }
 
     return {
@@ -91,7 +106,9 @@ def build(year: int) -> dict:
         "updated": datetime.datetime.now(datetime.UTC).isoformat(
             timespec="seconds"
         ),
-        "last_session": _session_json(latest.session if latest else None),
+        "last_session": _session_json(
+            latest.session if latest else None, places
+        ),
         "remaining": {
             "races": sum(s.kind == "race" for s in remaining),
             "sprints": sum(s.kind == "sprint" for s in remaining),

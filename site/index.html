@@ -6,7 +6,7 @@
   <title>Driver Elimination</title>
   <meta name="description" content="Tracking the point in the season at which each F1 driver is mathematically eliminated from the championship.">
   <script defer src="https://cloud.umami.is/script.js" data-website-id="746c0a15-0eac-4ab1-a1c7-50950bc2ed95" data-domains="driverelimination.com"></script>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
   <div class="banner" role="note">
@@ -31,15 +31,29 @@
           <tr>
             <th class="num">Pos</th>
             <th>Driver</th>
-            <th>Team</th>
             <th class="num">Pts</th>
-            <th title="No result in the remaining races can make this driver champion">Mathematically out</th>
-            <th title="Out assuming every points-paying position in every remaining race is awarded">Out if no top-10 DNFs</th>
+            <th>Status</th>
           </tr>
         </thead>
         <tbody id="drivers"></tbody>
       </table>
     </div>
+
+    <dl class="legend">
+      <dt class="alive">In contention</dt>
+      <dd>Some combination of results in the remaining races still makes this driver champion.</dd>
+      <dt>Out</dt>
+      <dd>
+        No combination of results in the remaining races can make this driver champion. 
+        It is mathematically impossible for them to win.
+        The displayed race is the one after which they were eliminated.
+      </dd>
+      <dt>Out if no top-10 DNFs</dt>
+      <dd>
+        Out, assuming every points-paying position in every remaining race is awarded to someone (i.e., there are no DNFs in the top 10 in any of the remaining races).
+        The driver's only path to victory relies on at least one race in which not all points-paying positions are filled.
+      </dd>
+    </dl>
   </main>
 
   <footer>
@@ -57,21 +71,53 @@
 
     const SEASON = 2026;
 
-    function sessionLabel(session) {
-      const name = session.name.replace("Grand Prix", "GP");
-      return `R${session.round} ${name}${session.kind === "sprint" ? " sprint" : ""}`;
+    // Full text on wide screens, short text on narrow ones (see style.css).
+    function responsive(full, short) {
+      const wrap = document.createDocumentFragment();
+      for (const [text, className] of [[full, "wide-only"], [short, "narrow-only"]]) {
+        const span = document.createElement("span");
+        span.className = className;
+        span.textContent = text;
+        wrap.append(span);
+      }
+      return wrap;
     }
 
-    function cell(row, text, className) {
+    // e.g. "R14 Spanish GP" on wide screens, "R14 Madrid" on narrow ones.
+    function sessionLabel(session) {
+      const sprint = session.kind === "sprint" ? " sprint" : "";
+      const full = `R${session.round} ${session.name.replace("Grand Prix", "GP")}${sprint}`;
+      const short = `R${session.round} ${session.place || session.name}${sprint}`;
+      return responsive(full, short);
+    }
+
+    function line(content, className) {
+      const span = document.createElement("span");
+      span.className = className;
+      span.append(...content);
+      return span;
+    }
+
+    function cell(row, content, className) {
       const td = row.insertCell();
-      td.textContent = text;
+      td.append(...content);
       if (className) td.className = className;
       return td;
     }
 
-    function outCell(row, session) {
-      if (session) cell(row, sessionLabel(session));
-      else cell(row, "In contention", "alive");
+    // One status from the two methods. Full-points elimination is never later
+    // than the strict one, so it decides whether the driver is shown as out.
+    function status(eliminated) {
+      const { strict, full_points: full } = eliminated;
+      if (!full) return [line(["In contention"], "alive")];
+      const sameSession = strict && strict.round === full.round && strict.kind === full.kind;
+      if (sameSession) return [line(["Out · ", sessionLabel(full)])];
+      return [
+        line(["Out if no top-10 DNFs · ", sessionLabel(full)]),
+        strict
+          ? line(["Mathematically out · ", sessionLabel(strict)], "sub")
+          : line(["Mathematically still possible"], "sub"),
+      ];
     }
 
     async function load() {
@@ -98,7 +144,7 @@
           return;
         }
         const left = data.remaining;
-        const parts = [`After ${sessionLabel(data.last_session)}`];
+        const parts = [];
         if (left.races || left.sprints) {
           parts.push(
             `${left.races} GP${left.races === 1 ? "" : "s"} and ${left.sprints} sprint${left.sprints === 1 ? "" : "s"} left`,
@@ -107,18 +153,19 @@
         } else {
           parts.push("season complete");
         }
-        summary.textContent = parts.join(" · ");
+        summary.replaceChildren("After ", sessionLabel(data.last_session), ...parts.map((p) => ` · ${p}`));
 
         const body = document.getElementById("drivers");
         for (const d of data.drivers) {
           const row = body.insertRow();
-          if (d.eliminated.strict || d.eliminated.full_points) row.className = "out";
-          cell(row, d.position, "num");
-          cell(row, d.name);
-          cell(row, d.team);
-          cell(row, d.points, "num");
-          outCell(row, d.eliminated.strict);
-          outCell(row, d.eliminated.full_points);
+          if (d.eliminated.full_points) row.className = "out";
+          cell(row, [d.position], "num");
+          cell(row, [
+            line([responsive(d.name, d.family_name)], "driver"),
+            line([d.team], "sub"),
+          ]);
+          cell(row, [d.points], "num");
+          cell(row, status(d.eliminated), "status");
         }
       } catch (err) {
         summary.textContent = `Couldn't load the standings (${err.message}).`;
