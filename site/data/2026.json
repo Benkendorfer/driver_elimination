@@ -1,0 +1,447 @@
+{
+  "season": 2026,
+  "updated": "2026-10-01T03:28:56+00:00",
+  "last_session": {
+    "round": 15,
+    "kind": "race",
+    "name": "Azerbaijan Grand Prix"
+  },
+  "remaining": {
+    "races": 8,
+    "sprints": 1,
+    "max_points": 208
+  },
+  "clinch": {
+    "strict": null,
+    "full_points": null
+  },
+  "drivers": [
+    {
+      "id": "antonelli",
+      "code": "ANT",
+      "name": "Andrea Kimi Antonelli",
+      "team": "Mercedes",
+      "position": 1,
+      "points": 302.0,
+      "wins": 8,
+      "eliminated": {
+        "strict": null,
+        "full_points": null
+      }
+    },
+    {
+      "id": "russell",
+      "code": "RUS",
+      "name": "George Russell",
+      "team": "Mercedes",
+      "position": 2,
+      "points": 236.0,
+      "wins": 3,
+      "eliminated": {
+        "strict": null,
+        "full_points": null
+      }
+    },
+    {
+      "id": "hamilton",
+      "code": "HAM",
+      "name": "Lewis Hamilton",
+      "team": "Ferrari",
+      "position": 3,
+      "points": 199.0,
+      "wins": 1,
+      "eliminated": {
+        "strict": null,
+        "full_points": null
+      }
+    },
+    {
+      "id": "norris",
+      "code": "NOR",
+      "name": "Lando Norris",
+      "team": "McLaren",
+      "position": 4,
+      "points": 186.0,
+      "wins": 2,
+      "eliminated": {
+        "strict": null,
+        "full_points": null
+      }
+    },
+    {
+      "id": "leclerc",
+      "code": "LEC",
+      "name": "Charles Leclerc",
+      "team": "Ferrari",
+      "position": 5,
+      "points": 179.0,
+      "wins": 1,
+      "eliminated": {
+        "strict": null,
+        "full_points": null
+      }
+    },
+    {
+      "id": "max_verstappen",
+      "code": "VER",
+      "name": "Max Verstappen",
+      "team": "Red Bull",
+      "position": 6,
+      "points": 163.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": null,
+        "full_points": null
+      }
+    },
+    {
+      "id": "piastri",
+      "code": "PIA",
+      "name": "Oscar Piastri",
+      "team": "McLaren",
+      "position": 7,
+      "points": 120.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": null,
+        "full_points": null
+      }
+    },
+    {
+      "id": "hadjar",
+      "code": "HAD",
+      "name": "Isack Hadjar",
+      "team": "Red Bull",
+      "position": 8,
+      "points": 86.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 15,
+          "kind": "race",
+          "name": "Azerbaijan Grand Prix"
+        },
+        "full_points": {
+          "round": 15,
+          "kind": "race",
+          "name": "Azerbaijan Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "lawson",
+      "code": "LAW",
+      "name": "Liam Lawson",
+      "team": "RB F1 Team",
+      "position": 9,
+      "points": 59.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 15,
+          "kind": "race",
+          "name": "Azerbaijan Grand Prix"
+        },
+        "full_points": {
+          "round": 15,
+          "kind": "race",
+          "name": "Azerbaijan Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "gasly",
+      "code": "GAS",
+      "name": "Pierre Gasly",
+      "team": "Alpine F1 Team",
+      "position": 10,
+      "points": 41.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        },
+        "full_points": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "arvid_lindblad",
+      "code": "LIN",
+      "name": "Arvid Lindblad",
+      "team": "RB F1 Team",
+      "position": 11,
+      "points": 37.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        },
+        "full_points": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "colapinto",
+      "code": "COL",
+      "name": "Franco Colapinto",
+      "team": "Alpine F1 Team",
+      "position": 12,
+      "points": 27.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        },
+        "full_points": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "bearman",
+      "code": "BEA",
+      "name": "Oliver Bearman",
+      "team": "Haas F1 Team",
+      "position": 13,
+      "points": 20.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        },
+        "full_points": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "bortoleto",
+      "code": "BOR",
+      "name": "Gabriel Bortoleto",
+      "team": "Audi",
+      "position": 14,
+      "points": 10.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        },
+        "full_points": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "hulkenberg",
+      "code": "HUL",
+      "name": "Nico H\u00fclkenberg",
+      "team": "Audi",
+      "position": 15,
+      "points": 7.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "ocon",
+      "code": "OCO",
+      "name": "Esteban Ocon",
+      "team": "Haas F1 Team",
+      "position": 16,
+      "points": 7.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "sainz",
+      "code": "SAI",
+      "name": "Carlos Sainz",
+      "team": "Williams",
+      "position": 17,
+      "points": 7.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "albon",
+      "code": "ALB",
+      "name": "Alexander Albon",
+      "team": "Williams",
+      "position": 18,
+      "points": 5.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "alonso",
+      "code": "ALO",
+      "name": "Fernando Alonso",
+      "team": "Aston Martin",
+      "position": 19,
+      "points": 3.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "tsunoda",
+      "code": "TSU",
+      "name": "Yuki Tsunoda",
+      "team": "RB F1 Team",
+      "position": 20,
+      "points": 1.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "stroll",
+      "code": "STR",
+      "name": "Lance Stroll",
+      "team": "Aston Martin",
+      "position": 21,
+      "points": 0.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "bottas",
+      "code": "BOT",
+      "name": "Valtteri Bottas",
+      "team": "Cadillac F1 Team",
+      "position": 22,
+      "points": 0.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    },
+    {
+      "id": "perez",
+      "code": "PER",
+      "name": "Sergio P\u00e9rez",
+      "team": "Cadillac F1 Team",
+      "position": 23,
+      "points": 0.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix"
+        }
+      }
+    }
+  ]
+}
