@@ -24,7 +24,7 @@ logger = logging.getLogger(__name__)
 
 # Finishing positions considered for the countback tie-break. Larger than any
 # grid, so a tie is only left unresolved if two drivers' results are identical.
-_MAX_POSITION = 30
+MAX_POSITION = 30
 
 
 @dataclasses.dataclass
@@ -50,7 +50,7 @@ class Standings:
         on. Drivers with equal keys are genuinely tied.
         """
         finishes = self.gp_finishes[driver]
-        countback = tuple(-finishes[p] for p in range(1, _MAX_POSITION + 1))
+        countback = tuple(-finishes[p] for p in range(1, MAX_POSITION + 1))
         return (-self.points[driver], countback)
 
     def ranking(self) -> list[str]:

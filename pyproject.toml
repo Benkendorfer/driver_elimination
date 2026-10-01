@@ -4,6 +4,7 @@ version = "0.1.0"
 description = "Tracks when each F1 driver is mathematically eliminated from the championship"
 requires-python = ">=3.14"
 dependencies = [
+    "highspy>=1.15.1",
     "pulp>=3.3.2",
     "requests>=2.34.2",
 ]
@@ -12,10 +13,12 @@ dependencies = [
 venvPath = "."
 venv = ".venv"
 pythonVersion = "3.14"
+extraPaths = ["src/python"]  # so tests can import our modules
 
 # Google Python Style Guide (https://google.github.io/styleguide/pyguide.html), as far as ruff can check it
 [tool.ruff]
 line-length = 80
+src = ["src/python"]  # so our own modules sort as first-party imports
 
 [tool.ruff.lint]
 select = [
@@ -60,3 +63,16 @@ single-line-exclusions = ["typing", "collections.abc"]
 "requests.request".msg = "Use jolpi._get, which caches and throttles requests"
 "requests.Session".msg = "Use jolpi._get, which caches and throttles requests"
 "urllib.request.urlopen".msg = "Use jolpi._get, which caches and throttles requests"
+
+[dependency-groups]
+dev = [
+    "pytest>=9.1.1",
+]
+
+[tool.pytest.ini_options]
+pythonpath = ["src/python"]
+testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+# Test names say what they check; docstrings would only repeat them.
+"tests/**" = ["D"]

@@ -45,17 +45,22 @@ def sessions(year: int) -> list[Session]:
     return result
 
 
-def remaining_after(year: int, session: Session) -> list[Session]:
-    """The sessions of `year` that come after `session`, in date order.
+def remaining_after(
+    all_sessions: list[Session], session: Session
+) -> list[Session]:
+    """The sessions in `all_sessions` that come after `session`.
+
+    Args:
+        all_sessions: A season's sessions in date order, from `sessions`.
+        session: A session of that season.
 
     Raises:
-        ValueError: If `session` is not in the `year` calendar.
+        ValueError: If `session` is not in `all_sessions`.
     """
-    all_sessions = sessions(year)
     for i, s in enumerate(all_sessions):
         if (s.rnd, s.kind) == (session.rnd, session.kind):
             return all_sessions[i + 1 :]
-    msg = f"No {session.kind} in round {session.rnd} of {year}"
+    msg = f"No {session.kind} in round {session.rnd}"
     raise ValueError(msg)
 
 
@@ -80,7 +85,7 @@ def main() -> None:
     print("After                                   GPs left  Sprints  Max pts")
     for snapshot in standings.standings_by_session(year):
         session = snapshot.session
-        remaining = remaining_after(year, session)
+        remaining = remaining_after(all_sessions, session)
         sprints = sum(s.kind == "sprint" for s in remaining)
         label = f"R{session.rnd} {session.name} ({session.kind})"
         print(
