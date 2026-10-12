@@ -1,16 +1,16 @@
 {
   "season": 2026,
-  "updated": "2026-10-08T02:03:36+00:00",
+  "updated": "2026-10-12T02:12:08+00:00",
   "last_session": {
-    "round": 16,
+    "round": 17,
     "kind": "race",
-    "name": "Bahrain Grand Prix in Malaysia",
-    "place": "Kuala Lumpur"
+    "name": "Singapore Grand Prix",
+    "place": "Marina Bay"
   },
   "remaining": {
-    "races": 7,
-    "sprints": 1,
-    "max_points": 183
+    "races": 6,
+    "sprints": 0,
+    "max_points": 150
   },
   "clinch": {
     "strict": null,
@@ -25,7 +25,7 @@
       "family_name": "Antonelli",
       "team": "Mercedes",
       "position": 1,
-      "points": 320.0,
+      "points": 340.0,
       "wins": 8,
       "eliminated": {
         "strict": null,
@@ -40,7 +40,7 @@
       "family_name": "Russell",
       "team": "Mercedes",
       "position": 2,
-      "points": 236.0,
+      "points": 238.0,
       "wins": 3,
       "eliminated": {
         "strict": null,
@@ -55,8 +55,23 @@
       "family_name": "Hamilton",
       "team": "Ferrari",
       "position": 3,
-      "points": 214.0,
+      "points": 229.0,
       "wins": 1,
+      "eliminated": {
+        "strict": null,
+        "full_points": null
+      }
+    },
+    {
+      "id": "max_verstappen",
+      "code": "VER",
+      "name": "Max Verstappen",
+      "given_name": "Max",
+      "family_name": "Verstappen",
+      "team": "Red Bull",
+      "position": 4,
+      "points": 221.0,
+      "wins": 2,
       "eliminated": {
         "strict": null,
         "full_points": null
@@ -69,8 +84,8 @@
       "given_name": "Charles",
       "family_name": "Leclerc",
       "team": "Ferrari",
-      "position": 4,
-      "points": 191.0,
+      "position": 5,
+      "points": 215.0,
       "wins": 1,
       "eliminated": {
         "strict": null,
@@ -84,24 +99,9 @@
       "given_name": "Lando",
       "family_name": "Norris",
       "team": "McLaren",
-      "position": 5,
-      "points": 188.0,
-      "wins": 2,
-      "eliminated": {
-        "strict": null,
-        "full_points": null
-      }
-    },
-    {
-      "id": "max_verstappen",
-      "code": "VER",
-      "name": "Max Verstappen",
-      "given_name": "Max",
-      "family_name": "Verstappen",
-      "team": "Red Bull",
       "position": 6,
-      "points": 188.0,
-      "wins": 1,
+      "points": 201.0,
+      "wins": 2,
       "eliminated": {
         "strict": null,
         "full_points": null
@@ -115,7 +115,7 @@
       "family_name": "Piastri",
       "team": "McLaren",
       "position": 7,
-      "points": 128.0,
+      "points": 138.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -140,7 +140,7 @@
       "family_name": "Hadjar",
       "team": "Red Bull",
       "position": 8,
-      "points": 96.0,
+      "points": 97.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -165,7 +165,7 @@
       "family_name": "Lawson",
       "team": "RB",
       "position": 9,
-      "points": 65.0,
+      "points": 75.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -265,32 +265,7 @@
       "family_name": "Bearman",
       "team": "Haas",
       "position": 13,
-      "points": 20.0,
-      "wins": 0,
-      "eliminated": {
-        "strict": {
-          "round": 14,
-          "kind": "race",
-          "name": "Spanish Grand Prix",
-          "place": "Madrid"
-        },
-        "full_points": {
-          "round": 14,
-          "kind": "race",
-          "name": "Spanish Grand Prix",
-          "place": "Madrid"
-        }
-      }
-    },
-    {
-      "id": "bortoleto",
-      "code": "BOR",
-      "name": "Gabriel Bortoleto",
-      "given_name": "Gabriel",
-      "family_name": "Bortoleto",
-      "team": "Audi",
-      "position": 14,
-      "points": 10.0,
+      "points": 23.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -314,8 +289,8 @@
       "given_name": "Nico",
       "family_name": "H\u00fclkenberg",
       "team": "Audi",
-      "position": 15,
-      "points": 7.0,
+      "position": 14,
+      "points": 13.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -329,6 +304,31 @@
           "kind": "race",
           "name": "Italian Grand Prix",
           "place": "Monza"
+        }
+      }
+    },
+    {
+      "id": "bortoleto",
+      "code": "BOR",
+      "name": "Gabriel Bortoleto",
+      "given_name": "Gabriel",
+      "family_name": "Bortoleto",
+      "team": "Audi",
+      "position": 15,
+      "points": 10.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
+        },
+        "full_points": {
+          "round": 14,
+          "kind": "race",
+          "name": "Spanish Grand Prix",
+          "place": "Madrid"
         }
       }
     },
