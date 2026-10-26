@@ -1,16 +1,16 @@
 {
   "season": 2026,
-  "updated": "2026-10-12T02:12:08+00:00",
+  "updated": "2026-10-26T01:04:29+00:00",
   "last_session": {
-    "round": 17,
+    "round": 18,
     "kind": "race",
-    "name": "Singapore Grand Prix",
-    "place": "Marina Bay"
+    "name": "United States Grand Prix",
+    "place": "Austin"
   },
   "remaining": {
-    "races": 6,
+    "races": 5,
     "sprints": 0,
-    "max_points": 150
+    "max_points": 125
   },
   "clinch": {
     "strict": null,
@@ -25,8 +25,8 @@
       "family_name": "Antonelli",
       "team": "Mercedes",
       "position": 1,
-      "points": 340.0,
-      "wins": 8,
+      "points": 365.0,
+      "wins": 9,
       "eliminated": {
         "strict": null,
         "full_points": null
@@ -40,7 +40,7 @@
       "family_name": "Russell",
       "team": "Mercedes",
       "position": 2,
-      "points": 238.0,
+      "points": 242.0,
       "wins": 3,
       "eliminated": {
         "strict": null,
@@ -55,7 +55,7 @@
       "family_name": "Hamilton",
       "team": "Ferrari",
       "position": 3,
-      "points": 229.0,
+      "points": 241.0,
       "wins": 1,
       "eliminated": {
         "strict": null,
@@ -70,11 +70,21 @@
       "family_name": "Verstappen",
       "team": "Red Bull",
       "position": 4,
-      "points": 221.0,
+      "points": 236.0,
       "wins": 2,
       "eliminated": {
-        "strict": null,
-        "full_points": null
+        "strict": {
+          "round": 18,
+          "kind": "race",
+          "name": "United States Grand Prix",
+          "place": "Austin"
+        },
+        "full_points": {
+          "round": 18,
+          "kind": "race",
+          "name": "United States Grand Prix",
+          "place": "Austin"
+        }
       }
     },
     {
@@ -85,11 +95,21 @@
       "family_name": "Leclerc",
       "team": "Ferrari",
       "position": 5,
-      "points": 215.0,
+      "points": 233.0,
       "wins": 1,
       "eliminated": {
-        "strict": null,
-        "full_points": null
+        "strict": {
+          "round": 18,
+          "kind": "race",
+          "name": "United States Grand Prix",
+          "place": "Austin"
+        },
+        "full_points": {
+          "round": 18,
+          "kind": "race",
+          "name": "United States Grand Prix",
+          "place": "Austin"
+        }
       }
     },
     {
@@ -100,11 +120,21 @@
       "family_name": "Norris",
       "team": "McLaren",
       "position": 6,
-      "points": 201.0,
+      "points": 211.0,
       "wins": 2,
       "eliminated": {
-        "strict": null,
-        "full_points": null
+        "strict": {
+          "round": 18,
+          "kind": "race",
+          "name": "United States Grand Prix",
+          "place": "Austin"
+        },
+        "full_points": {
+          "round": 18,
+          "kind": "race",
+          "name": "United States Grand Prix",
+          "place": "Austin"
+        }
       }
     },
     {
@@ -115,7 +145,7 @@
       "family_name": "Piastri",
       "team": "McLaren",
       "position": 7,
-      "points": 138.0,
+      "points": 144.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -140,7 +170,7 @@
       "family_name": "Hadjar",
       "team": "Red Bull",
       "position": 8,
-      "points": 97.0,
+      "points": 105.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -165,7 +195,7 @@
       "family_name": "Lawson",
       "team": "RB",
       "position": 9,
-      "points": 75.0,
+      "points": 77.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -190,7 +220,7 @@
       "family_name": "Gasly",
       "team": "Alpine",
       "position": 10,
-      "points": 41.0,
+      "points": 42.0,
       "wins": 0,
       "eliminated": {
         "strict": {
