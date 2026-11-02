@@ -1,20 +1,36 @@
 {
   "season": 2026,
-  "updated": "2026-10-26T01:04:29+00:00",
+  "updated": "2026-11-02T02:15:00+00:00",
   "last_session": {
-    "round": 18,
+    "round": 19,
     "kind": "race",
-    "name": "United States Grand Prix",
-    "place": "Austin"
+    "name": "Mexico City Grand Prix",
+    "place": "Mexico City"
   },
   "remaining": {
-    "races": 5,
+    "races": 4,
     "sprints": 0,
-    "max_points": 125
+    "max_points": 100
   },
   "clinch": {
-    "strict": null,
-    "full_points": null
+    "strict": {
+      "driver": "antonelli",
+      "session": {
+        "round": 19,
+        "kind": "race",
+        "name": "Mexico City Grand Prix",
+        "place": "Mexico City"
+      }
+    },
+    "full_points": {
+      "driver": "antonelli",
+      "session": {
+        "round": 19,
+        "kind": "race",
+        "name": "Mexico City Grand Prix",
+        "place": "Mexico City"
+      }
+    }
   },
   "drivers": [
     {
@@ -25,38 +41,8 @@
       "family_name": "Antonelli",
       "team": "Mercedes",
       "position": 1,
-      "points": 365.0,
+      "points": 380.0,
       "wins": 9,
-      "eliminated": {
-        "strict": null,
-        "full_points": null
-      }
-    },
-    {
-      "id": "russell",
-      "code": "RUS",
-      "name": "George Russell",
-      "given_name": "George",
-      "family_name": "Russell",
-      "team": "Mercedes",
-      "position": 2,
-      "points": 242.0,
-      "wins": 3,
-      "eliminated": {
-        "strict": null,
-        "full_points": null
-      }
-    },
-    {
-      "id": "hamilton",
-      "code": "HAM",
-      "name": "Lewis Hamilton",
-      "given_name": "Lewis",
-      "family_name": "Hamilton",
-      "team": "Ferrari",
-      "position": 3,
-      "points": 241.0,
-      "wins": 1,
       "eliminated": {
         "strict": null,
         "full_points": null
@@ -69,9 +55,9 @@
       "given_name": "Max",
       "family_name": "Verstappen",
       "team": "Red Bull",
-      "position": 4,
-      "points": 236.0,
-      "wins": 2,
+      "position": 2,
+      "points": 261.0,
+      "wins": 3,
       "eliminated": {
         "strict": {
           "round": 18,
@@ -88,6 +74,56 @@
       }
     },
     {
+      "id": "hamilton",
+      "code": "HAM",
+      "name": "Lewis Hamilton",
+      "given_name": "Lewis",
+      "family_name": "Hamilton",
+      "team": "Ferrari",
+      "position": 3,
+      "points": 259.0,
+      "wins": 1,
+      "eliminated": {
+        "strict": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        },
+        "full_points": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        }
+      }
+    },
+    {
+      "id": "russell",
+      "code": "RUS",
+      "name": "George Russell",
+      "given_name": "George",
+      "family_name": "Russell",
+      "team": "Mercedes",
+      "position": 4,
+      "points": 250.0,
+      "wins": 3,
+      "eliminated": {
+        "strict": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        },
+        "full_points": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        }
+      }
+    },
+    {
       "id": "leclerc",
       "code": "LEC",
       "name": "Charles Leclerc",
@@ -95,7 +131,7 @@
       "family_name": "Leclerc",
       "team": "Ferrari",
       "position": 5,
-      "points": 233.0,
+      "points": 245.0,
       "wins": 1,
       "eliminated": {
         "strict": {
@@ -120,7 +156,7 @@
       "family_name": "Norris",
       "team": "McLaren",
       "position": 6,
-      "points": 211.0,
+      "points": 221.0,
       "wins": 2,
       "eliminated": {
         "strict": {
@@ -145,7 +181,7 @@
       "family_name": "Piastri",
       "team": "McLaren",
       "position": 7,
-      "points": 144.0,
+      "points": 150.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -195,7 +231,7 @@
       "family_name": "Lawson",
       "team": "RB",
       "position": 9,
-      "points": 77.0,
+      "points": 79.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -220,7 +256,7 @@
       "family_name": "Gasly",
       "team": "Alpine",
       "position": 10,
-      "points": 42.0,
+      "points": 43.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -270,7 +306,7 @@
       "family_name": "Colapinto",
       "team": "Alpine",
       "position": 12,
-      "points": 27.0,
+      "points": 31.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -538,13 +574,38 @@
       }
     },
     {
+      "id": "ryo_hirakawa",
+      "code": "HIR",
+      "name": "Ryo Hirakawa",
+      "given_name": "Ryo",
+      "family_name": "Hirakawa",
+      "team": "Haas",
+      "position": 23,
+      "points": 0.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        },
+        "full_points": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        }
+      }
+    },
+    {
       "id": "perez",
       "code": "PER",
       "name": "Sergio P\u00e9rez",
       "given_name": "Sergio",
       "family_name": "P\u00e9rez",
       "team": "Cadillac",
-      "position": 23,
+      "position": 24,
       "points": 0.0,
       "wins": 0,
       "eliminated": {
