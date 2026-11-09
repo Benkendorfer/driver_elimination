@@ -1,34 +1,34 @@
 {
   "season": 2026,
-  "updated": "2026-11-02T02:15:00+00:00",
+  "updated": "2026-11-09T02:30:54+00:00",
   "last_session": {
-    "round": 19,
+    "round": 20,
     "kind": "race",
-    "name": "Mexico City Grand Prix",
-    "place": "Mexico City"
+    "name": "Brazilian Grand Prix",
+    "place": "S\u00e3o Paulo"
   },
   "remaining": {
-    "races": 4,
+    "races": 3,
     "sprints": 0,
-    "max_points": 100
+    "max_points": 75
   },
   "clinch": {
     "strict": {
       "driver": "antonelli",
       "session": {
-        "round": 19,
+        "round": 20,
         "kind": "race",
-        "name": "Mexico City Grand Prix",
-        "place": "Mexico City"
+        "name": "Brazilian Grand Prix",
+        "place": "S\u00e3o Paulo"
       }
     },
     "full_points": {
       "driver": "antonelli",
       "session": {
-        "round": 19,
+        "round": 20,
         "kind": "race",
-        "name": "Mexico City Grand Prix",
-        "place": "Mexico City"
+        "name": "Brazilian Grand Prix",
+        "place": "S\u00e3o Paulo"
       }
     }
   },
@@ -41,7 +41,7 @@
       "family_name": "Antonelli",
       "team": "Mercedes",
       "position": 1,
-      "points": 380.0,
+      "points": 390.0,
       "wins": 9,
       "eliminated": {
         "strict": null,
@@ -56,7 +56,7 @@
       "family_name": "Verstappen",
       "team": "Red Bull",
       "position": 2,
-      "points": 261.0,
+      "points": 279.0,
       "wins": 3,
       "eliminated": {
         "strict": {
@@ -70,31 +70,6 @@
           "kind": "race",
           "name": "United States Grand Prix",
           "place": "Austin"
-        }
-      }
-    },
-    {
-      "id": "hamilton",
-      "code": "HAM",
-      "name": "Lewis Hamilton",
-      "given_name": "Lewis",
-      "family_name": "Hamilton",
-      "team": "Ferrari",
-      "position": 3,
-      "points": 259.0,
-      "wins": 1,
-      "eliminated": {
-        "strict": {
-          "round": 19,
-          "kind": "race",
-          "name": "Mexico City Grand Prix",
-          "place": "Mexico City"
-        },
-        "full_points": {
-          "round": 19,
-          "kind": "race",
-          "name": "Mexico City Grand Prix",
-          "place": "Mexico City"
         }
       }
     },
@@ -105,9 +80,34 @@
       "given_name": "George",
       "family_name": "Russell",
       "team": "Mercedes",
-      "position": 4,
-      "points": 250.0,
+      "position": 3,
+      "points": 262.0,
       "wins": 3,
+      "eliminated": {
+        "strict": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        },
+        "full_points": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        }
+      }
+    },
+    {
+      "id": "hamilton",
+      "code": "HAM",
+      "name": "Lewis Hamilton",
+      "given_name": "Lewis",
+      "family_name": "Hamilton",
+      "team": "Ferrari",
+      "position": 4,
+      "points": 261.0,
+      "wins": 1,
       "eliminated": {
         "strict": {
           "round": 19,
@@ -131,7 +131,7 @@
       "family_name": "Leclerc",
       "team": "Ferrari",
       "position": 5,
-      "points": 245.0,
+      "points": 249.0,
       "wins": 1,
       "eliminated": {
         "strict": {
@@ -156,8 +156,8 @@
       "family_name": "Norris",
       "team": "McLaren",
       "position": 6,
-      "points": 221.0,
-      "wins": 2,
+      "points": 246.0,
+      "wins": 3,
       "eliminated": {
         "strict": {
           "round": 18,
@@ -181,7 +181,7 @@
       "family_name": "Piastri",
       "team": "McLaren",
       "position": 7,
-      "points": 150.0,
+      "points": 152.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -206,7 +206,7 @@
       "family_name": "Hadjar",
       "team": "Red Bull",
       "position": 8,
-      "points": 105.0,
+      "points": 122.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -231,7 +231,7 @@
       "family_name": "Lawson",
       "team": "RB",
       "position": 9,
-      "points": 79.0,
+      "points": 89.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -256,7 +256,7 @@
       "family_name": "Gasly",
       "team": "Alpine",
       "position": 10,
-      "points": 43.0,
+      "points": 42.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -306,7 +306,7 @@
       "family_name": "Colapinto",
       "team": "Alpine",
       "position": 12,
-      "points": 31.0,
+      "points": 27.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -349,39 +349,14 @@
       }
     },
     {
-      "id": "hulkenberg",
-      "code": "HUL",
-      "name": "Nico H\u00fclkenberg",
-      "given_name": "Nico",
-      "family_name": "H\u00fclkenberg",
-      "team": "Audi",
-      "position": 14,
-      "points": 13.0,
-      "wins": 0,
-      "eliminated": {
-        "strict": {
-          "round": 13,
-          "kind": "race",
-          "name": "Italian Grand Prix",
-          "place": "Monza"
-        },
-        "full_points": {
-          "round": 13,
-          "kind": "race",
-          "name": "Italian Grand Prix",
-          "place": "Monza"
-        }
-      }
-    },
-    {
       "id": "bortoleto",
       "code": "BOR",
       "name": "Gabriel Bortoleto",
       "given_name": "Gabriel",
       "family_name": "Bortoleto",
       "team": "Audi",
-      "position": 15,
-      "points": 10.0,
+      "position": 14,
+      "points": 14.0,
       "wins": 0,
       "eliminated": {
         "strict": {
@@ -395,6 +370,31 @@
           "kind": "race",
           "name": "Spanish Grand Prix",
           "place": "Madrid"
+        }
+      }
+    },
+    {
+      "id": "hulkenberg",
+      "code": "HUL",
+      "name": "Nico H\u00fclkenberg",
+      "given_name": "Nico",
+      "family_name": "H\u00fclkenberg",
+      "team": "Audi",
+      "position": 15,
+      "points": 14.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix",
+          "place": "Monza"
+        },
+        "full_points": {
+          "round": 13,
+          "kind": "race",
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -524,13 +524,38 @@
       }
     },
     {
+      "id": "ryo_hirakawa",
+      "code": "HIR",
+      "name": "Ryo Hirakawa",
+      "given_name": "Ryo",
+      "family_name": "Hirakawa",
+      "team": "Haas",
+      "position": 21,
+      "points": 1.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        },
+        "full_points": {
+          "round": 19,
+          "kind": "race",
+          "name": "Mexico City Grand Prix",
+          "place": "Mexico City"
+        }
+      }
+    },
+    {
       "id": "stroll",
       "code": "STR",
       "name": "Lance Stroll",
       "given_name": "Lance",
       "family_name": "Stroll",
       "team": "Aston Martin",
-      "position": 21,
+      "position": 22,
       "points": 0.0,
       "wins": 0,
       "eliminated": {
@@ -555,46 +580,21 @@
       "given_name": "Valtteri",
       "family_name": "Bottas",
       "team": "Cadillac",
-      "position": 22,
-      "points": 0.0,
-      "wins": 0,
-      "eliminated": {
-        "strict": {
-          "round": 13,
-          "kind": "race",
-          "name": "Italian Grand Prix",
-          "place": "Monza"
-        },
-        "full_points": {
-          "round": 13,
-          "kind": "race",
-          "name": "Italian Grand Prix",
-          "place": "Monza"
-        }
-      }
-    },
-    {
-      "id": "ryo_hirakawa",
-      "code": "HIR",
-      "name": "Ryo Hirakawa",
-      "given_name": "Ryo",
-      "family_name": "Hirakawa",
-      "team": "Haas",
       "position": 23,
       "points": 0.0,
       "wins": 0,
       "eliminated": {
         "strict": {
-          "round": 19,
+          "round": 13,
           "kind": "race",
-          "name": "Mexico City Grand Prix",
-          "place": "Mexico City"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         },
         "full_points": {
-          "round": 19,
+          "round": 13,
           "kind": "race",
-          "name": "Mexico City Grand Prix",
-          "place": "Mexico City"
+          "name": "Italian Grand Prix",
+          "place": "Monza"
         }
       }
     },
@@ -620,6 +620,31 @@
           "kind": "race",
           "name": "Italian Grand Prix",
           "place": "Monza"
+        }
+      }
+    },
+    {
+      "id": "rafael_camara",
+      "code": "",
+      "name": "Rafael Camara",
+      "given_name": "Rafael",
+      "family_name": "Camara",
+      "team": "Haas",
+      "position": 25,
+      "points": 0.0,
+      "wins": 0,
+      "eliminated": {
+        "strict": {
+          "round": 20,
+          "kind": "race",
+          "name": "Brazilian Grand Prix",
+          "place": "S\u00e3o Paulo"
+        },
+        "full_points": {
+          "round": 20,
+          "kind": "race",
+          "name": "Brazilian Grand Prix",
+          "place": "S\u00e3o Paulo"
         }
       }
     }
